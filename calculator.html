@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8" />
+	<Link href="calculator.css" rel="stylesheet" type="text/css">
+	<script src="https://unpkg.com/vue"></script>
+	<script defer src="calculator.js"></script>
+	<title>Vue Calculator</title>
+</head>
+<body>
+	<div id="calculator">
+		<div id="result">
+			<span style="background: #FEFEFE; min-height: 47px">{{ displayValue }}</span>
+		</div>
+		<div id="buttons">
+			<div class="button" @click="clear">C</div>
+			<div class="button" @click="log">log</div>
+			<div class="button" @click="inverse">1/x</div>
+			<div class="button" @click="addOp('/')">/</div>
+			<div class="button" @click="addDigit(7)">7</div>
+			<div class="button" @click="addDigit(8)">8</div>
+			<div class="button" @click="addDigit(9)">9</div>
+			<div class="button" @click="addOp('*')">*</div>
+			<div class="button" @click="addDigit(4)">4</div>
+			<div class="button" @click="addDigit(5)">5</div>
+			<div class="button" @click="addDigit(6)">6</div>
+			<div class="button" @click="addOp('-')">-</div>
+			<div class="button" @click="addDigit(1)">1</div>
+			<div class="button" @click="addDigit(2)">2</div>
+			<div class="button" @click="addDigit(3)">3</div>
+			<div class="button" @click="addOp('+')">+</div>
+			<div></div>
+			<div class="button" @click="addDigit(0)">0</div>
+			<div :class="{ button: true, disabledButton: decimalDisabled }" @click="addDigit('.')">.</div>
+			<div :class="{ button: true, disabledButton: equalDisabled }" @click="evaluate">=</div>
+
+		</div>
+		</div>
+		
+</body>
+</html>
